@@ -24,11 +24,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Trancended\\CientProduct\\ClientProductServiceProvider"
+                "Trancended\\ClientProduct\\ClientProductServiceProvider"
             ]
         },
         "aliases": {
-            "CientProduct": "Trancended\\CientProduct\\CientProductFacade"
+            "CientProduct": "Trancended\\ClientProduct\\CientProductFacade"
         }
     }
 }
