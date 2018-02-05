@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Trancended\\Client\\ClientProductServiceProvider"
+                "Trancended\\CientProduct\\ClientProductServiceProvider"
             ]
         },
         "aliases": {
