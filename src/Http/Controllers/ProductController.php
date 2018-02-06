@@ -8,16 +8,6 @@ use Trancended\ClientProduct\Http\Requests;
 
 class ProductController extends ClientController
 {
-    private const STATUS_UNAVAILABLE = 0;
-    private const STATUS_AVAILABLE = 1;
-
-    /**
-     * @var array
-     */
-    private static $status = [
-        self::STATUS_UNAVAILABLE,
-        self::STATUS_AVAILABLE,
-    ];
 
     /**
      * @param Request $request
@@ -26,12 +16,15 @@ class ProductController extends ClientController
     public function getAllProducts(Request $request)
     {
         $params = [];
-        if (in_array($request->get('status'), self::$status)) {
+
+        if (!is_null($request->get('status'))) {
             $params['status'] = (int)$request->get('status');
         }
+
         if ($request->get('morethan')) {
             $params['morethan'] = (int)$request->get('morethan');
         }
+
         $products = $this->obtainAllProducts($params);
 
         return view('trancended-clientproduct::products.all-products', ['products' => $products]);
